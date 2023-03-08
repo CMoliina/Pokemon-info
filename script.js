@@ -38,9 +38,11 @@ let getPokeData = () => {
 //Generar carta
 let generateCard = (data) => {
     //con un get capatar los datos que se necesitan y asignarlo a las variables que se tienen
-    console.log(data);
+    //console.log(data);
     const hp = data.stats[0].base_stat;
     //console.log(hp);
+    const pokeId = data.id;
+    console.log(pokeId)
     const imgSrc = data.sprites.other.dream_world.front_default;
     const pokeName = data.name[0].toUpperCase() + data.name.slice(1);
     const statAttack = data.stats[1].base_stat;
@@ -59,6 +61,7 @@ let generateCard = (data) => {
     </p>
     <img src=${imgSrc} />
     <h2 class="poke-name">${pokeName}</h2>
+    <h2 class="poke-id"># ${pokeId}</h2>
     <div class="types">
     </div>
     <div class="stats">
